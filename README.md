@@ -1,10 +1,10 @@
 # MrThread
-简介：
+## 简介：  
 MrThread是通过多线程实现的MapReduce的简称  
 MrThread是轻量级的MapReduce框架。 它在多个线程上执行MapReduce作业，这些线程可能属于一个进程，或者属于一台计算机的多个进程，或者属于多个计算机的多个进程。  
 MrThread用于模拟在较大规模或更大规模集群上运行的MapReduce作业，还用于突出显示MapReduce的分布式核心而不是其他功能。 由于MrThread中的线程上的Worker代表节点上的worker。  
 
-数据存储区：
+## 数据存储区：  
 数据存储区独立于计算平台。 它由本地文件系统实现。 数据存储区有一些概念：Datastore, Shard, Space, Table, Key and Line。  
 数据存储区管理所有Shard，其中一些是本地的，一些是远程的。  
 Shard是工作者的存储区。  
@@ -15,7 +15,7 @@ Line是包含在相应密钥中的一行数据文件。
 Shard, Space, Table, Key都被建模为文件夹，并且行由文本文件实现。  
 KeyLine是<Key，Line>数据结构。  
 
-运行过程：
+## 运行过程：  
 1.用户编写Mapper和Reducer函数。  
 2.用户配置server.properties函数。  
 3.用户准备数据集。每个目录的文件均为文本文件。服务器与ip，port（端口号）和root（默认名称+端口号）关联。一个目录映射到Worker，子目录是特定job的输入文件，缓存文件和输出文件。  
